@@ -1,0 +1,42 @@
+﻿@model List<string>
+
+@{
+    //List<string> products = ViewData["ViewDataProducts"] as List<string>;
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @*<ul class="list-group">
+                @foreach(var product in ViewBag.ViewbagProducts)
+                {
+                <li class="list-group-item">@product</li>
+                }
+                </ul>*@
+
+            @*<ul class="list-group">
+                @foreach (var product in products)
+                {
+                <li class="list-group-item">@product</li>
+                }
+                </ul>*@
+            <ul class="list-group">
+                @if (Model != null)
+                {
+                    foreach (var product in Model)
+                    {
+                        <li class="list-group-item">@product</li>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        <p>محصولی یافت نشد</p>
+                    </div>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
